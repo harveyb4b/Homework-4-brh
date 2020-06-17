@@ -5,6 +5,7 @@ const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
 const loader = document.getElementById('loader');
 const game = document.getElementById('game');
+
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -31,6 +32,7 @@ fetch(
                 formattedQuestion.answer - 1,
                 0,
                 loadedQuestion.correct_answer
+                         
             );
 
             answerChoices.forEach((choice, index) => {
@@ -44,21 +46,22 @@ fetch(
     })
     .catch((err) => {
         console.error(err);
+
     });
 
 //CONSTANTS
-const CORRECT_BONUS = 25;
+const CORRECT_BONUS = 200;
 const MAX_QUESTIONS =5;
 
 startGame = () => {
+    
     questionCounter = 0;
     score = 0;
     availableQuesions = [...questions];
     getNewQuestion();
     game.classList.remove('hidden');
     loader.classList.add('hidden');
-};
-
+}   
 getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
@@ -112,4 +115,21 @@ incrementScore = (num) => {
     scoreText.innerText = score;
 
     
+};
+if (classToApply === 'incorrect') {
+    decrement (CORRECT_BONUS);
+}
+
+selectedChoice.parentElement.classList.add(classToApply);
+
+setTimeout(() => {
+    selectedChoice.parentElement.classList.remove(classToApply);
+    getNewQuestion();
+}, 1000);
+
+decrementScore = (num) => {
+score += num;
+scoreText.innerText = score;
+
+
 };
