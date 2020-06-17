@@ -1,5 +1,5 @@
 :root {
-    background-color: #ecf5ff;
+    background-color: rgb(224, 224, 224); 
     font-size: 62.5%;
   }
   
@@ -20,7 +20,7 @@
   
   h1 {
     font-size: 5.4rem;
-    color: #56a5eb;
+    color: rgb(27, 139, 204);
     margin-bottom: 5rem;
   }
   
