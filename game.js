@@ -128,14 +128,13 @@ choices.forEach((choice) => {
 
         if (classToApply != 'correct') {
             decrementScore(CORRECT_BONUS-100);
-            decrementTime(secondsLeft-10000)
+            decrementTime(5);
         }     
-
 
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
-        }, 1000);
+        }, 500);
     });
 });
 
@@ -151,8 +150,8 @@ decrementScore = (num) => {
 };
 
 decrementTime = (num) => {
-    secondsLeft--;
-    timeEl.textContent = secondsLeft
+    secondsLeft -= num ;
+    timeEl.innerContent = secondsLeft;
   
 
 };
