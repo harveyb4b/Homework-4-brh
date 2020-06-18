@@ -52,6 +52,29 @@ fetch(
 //CONSTANTS
 const CORRECT_BONUS = 200;
 const MAX_QUESTIONS =5;
+var timeEl = document.querySelector(".time");
+//Ser Timer
+var secondsLeft = 60;
+
+function setTime() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left ";
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      sendMessage();
+    }
+
+  }, 1000);
+}
+//Game Over
+function sendMessage() {
+    timeEl.textContent = " Game Over "
+    location.replace("end.html")  
+   }
+
+setTime();
 
 startGame = () => {
     
