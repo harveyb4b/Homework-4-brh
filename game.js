@@ -128,9 +128,8 @@ choices.forEach((choice) => {
 
         if (classToApply != 'correct') {
             decrementScore(CORRECT_BONUS-100);
-        }
-
-        
+            decrementTime(secondsLeft-10000)
+        }     
 
 
         setTimeout(() => {
@@ -149,4 +148,11 @@ incrementScore = (num) => {
 decrementScore = (num) => {
     score -= num;
     scoreText.innerText = score;
+};
+
+decrementTime = (num) => {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft
+  
+
 };
