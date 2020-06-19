@@ -12,5 +12,7 @@ To test your general knowledge. Questions are randomly generated which allows th
 ## Features
 Randomly generated questions to ensure you don't stay bored for long.
 
+<img src="ReadMeImages/StartPage.PNG">
+<img src="ReadMeImages/TimedQuiz.PNG">
 <img src="ReadMeImages/HighScores.PNG">
 
